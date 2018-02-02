@@ -66,6 +66,7 @@ li{border: 0px solid red;}
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
+	min-height: 75%;
 	/*align-content: stretch;*/
 }
 
