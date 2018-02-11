@@ -1,2 +1,2 @@
-# qwerty-task1
-qwerty-school task1
+# qwerty-task2
+qwerty-school task2
