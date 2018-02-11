@@ -5,10 +5,11 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Mashko Alex task 1</title>
 	
-	
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">	
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" ><!-- for bootstrap -->
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"><!-- for bootstrap -->
 <link rel="stylesheet" href="styles/style.css" >
+	<script type="text/javascript" src="js/colorpicker.min.js"></script>
 </head>
 <body>
 
@@ -39,7 +40,7 @@
 		      <div class="panel-body">
 		      	<ul class="nav nav-tabs">
 				  <li class="active"><a data-toggle="tab" href="#login">Войти</a></li>
-				  <li><a data-toggle="tab" href="#registration">Зарегистрироваться</a></li>
+				  <li><a data-toggle="tab" href="#registration">Регистрация</a></li>
 				</ul>
 
 				<div class="tab-content">
@@ -119,22 +120,68 @@
 		</div>	
 	</div>
         <div class="content-container ">
-            <div class="sidebar">
-                <h3> <center>Sidebar</center></h3>
-                <center>	
-               	<ul>
-					<li><a href="#link1">link1</a></li>
-					<li><a href="#link2">link2</a></li>
-					<li><a href="#link3">link3</a></li>
-					<li><a href="#link4">link4</a></li>
-					<li><a href="#link5">link5</a></li>
-				</ul>
-				</center>
+            <div class="sidebar" id="sidebar" >
+
+            	<div class="sidebar-content" >
+            		
+            		<button class="w3-bar-item w3-button w3-medium w3-display-topright sidebar-close-button"
+	  						onclick="sidebar_close()" id="sidebar-close-button"> &times; 
+	  				</button>
+	  				
+	                <h3> Sidebar</h3>
+					
+	               	<ul>
+						<li><a href="#link1">link1</a></li>
+						<li><a href="#link2">link2</a></li>
+						<li><a href="#link3">link3</a></li>
+					</ul>
+					<hr>
+					<div class="form-group">
+						<label for="fontSizeInput">Шрифт (8-24)px:</label><br>
+						<select name="fontFamilySelect" id="fontFamilySelect">
+							<option value="Times New Roman">Times New Roman</option>
+							<option value="Georgia">Georgia</option>
+							<option value="Verdana">Verdana</option>
+							<option value="Comic Sans MS">Comic Sans MS</option>
+						</select><br><br>
+						<input id="fontSizeInput" class="w3-input fontSizeInput" type="number" name="fontSizeInput" value="16"><input type="button" class="w3-medium w3-bar-itemw 3-input" id="fontSizeButton" value="Изменить" onclick="change_font_p()">
+						<hr>
+						<button class="buttonOpenColorPicker" onclick="open_color_pikker()">Цвета фона</button><br>
+						<label for="fontSizeInput">Удалить последний абзац</label><br>
+						<button class="buttonRemoveLastP" onclick="last_p_delete()">Удалить</button>
+					</div>
+
+
+				</div>
             </div>
             <div class="content">
+				<button class="w3-button w3-teal w3-xlarge sidebar-open-button" onclick="sidebar_open()" id="sidebar-open-button">☰</button>
+				<div id="picker-container" >
+					<div id="color-picker" class="cp-default">
+					    <div class="picker-wrapper">
+					    <div id="picker" class="picker"></div>
+					    <div id="picker-indicator" class="picker-indicator"></div>
+					</div>
+					<div class="pcr-wrapper">
+					    <div id="pcr" class="pcr"></div>
+					    <div id="pcr-indicator" class="pcr-indicator"></div>
+					 </div>
+					<ul id="color-values">
+					    <li><label>RGB:</label><span id="rgb"></span></li>
+					    <li><label>HSV:</label><span id="hsv"></span></li>
+					    <li><label>HEX:</label><span id="hex"></span></li>
+					    <li><div id="pcr_bg"></div></li>
+					</ul>
+					</div>
+					<span onclick="this.parentElement.style.display='none'"
+  					class="w3-button w3-display-topright">X</span>
+				</div>
+				<div>
             	<h1> <center>Lorem ipsum dolor.</center></h1>
+           		
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quae velit esse, dolore ipsum itaque porro quas voluptatibus placeat quisquam voluptate, tenetur, sint, rerum quidem illum soluta blanditiis vero fuga sequi perspiciatis cumque laboriosam. Dolor nesciunt natus modi nisi aliquid labore, voluptas quam reiciendis, odit distinctio officiis animi, libero nihil doloremque repellat corporis nulla quae! Accusamus corporis a repellendus ipsum libero soluta consequatur vel voluptas sequi. Consequuntur repudiandae nulla, sed iusto tempora provident. Sunt obcaecati iusto nobis tempora distinctio dolorum ratione facilis deleniti dicta aperiam impedit, ex, aliquam vel nisi minus repellendus dignissimos esse corporis veritatis ipsam amet dolores necessitatibus.</p>
+            	</div>
                 <div>
                 	<h3 id="link1"><center>Link1</center></a></h3>
                		<img src="images/1.jpg" class="img-thumbnail" alt="">
@@ -157,6 +204,11 @@
 	</div>
  </div>
 
+
+<script type="text/javascript" >
+
+</script>
+	<script src="script.js" ></script>
 <!-- for bootstrap -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
  	<script src="bootstrap/js/bootstrap.min.js" ></script>
